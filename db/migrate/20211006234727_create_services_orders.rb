@@ -1,0 +1,12 @@
+class CreateServicesOrders < ActiveRecord::Migration[6.1]
+  def change
+    create_table :services_orders do |t|
+      t.references :customer, null: false, foreign_key: true
+      t.text :description
+      t.datetime :started_at
+      t.datetime :finished_at
+
+      t.timestamps
+    end
+  end
+end
